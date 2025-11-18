@@ -2,8 +2,8 @@ from operations import sum, subctract, multiply, divide
 
 def calculation():
     first_number = int(input("Inserisci un numero"))
-    while type(first_number) != "<class 'int'>":
-        first_number = input("Reinserici un valore valido ")
+    # while type(first_number) != "<class 'int'>":
+    #     first_number = input("Reinserici un valore valido ")
 
     second_number = int(input("Inserisci un altro numero"))
     operation = input("Inserisci un'operatore")
