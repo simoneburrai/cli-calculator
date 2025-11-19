@@ -1,20 +1,60 @@
-from operations import sum, subctract, multiply, divide
+from operations import sum, subctract, multiply, divide, square, module
 
-def calculation():
-    first_number = int(input("Inserisci un numero"))
-    # while type(first_number) != "<class 'int'>":
-    #     first_number = input("Reinserici un valore valido ")
+operations = {
+    "sum": "+",
+    "subctract": "-",
+    "multiply": "*",
+    "divide": "/",
+    "square": "**",
+    "module": "%"
+}
 
-    second_number = int(input("Inserisci un altro numero"))
-    operation = input("Inserisci un'operatore")
+def get_number(prompt):
+    
+    while True:
+        try:
+            return float(input(prompt))
+        except:
+            print("Inserisci un Numero Valido")
+
+def get_operation(prompt):
+
+    operation_values = operations.values()
+
+    while True:
+        current_operation = input(prompt)
+        if current_operation in operation_values:
+                return current_operation
+        else:
+            print("Inserire un operazione Valida : +, -, /, *, **, %")
+
+
+
+first_number = get_number("Inserisci un Numero")
+second_number= get_number("Inserisci un Altro Numero")
+operation = get_operation("Inserire un operatore per il tipo di operazione...")
+
+def calculator(num1, num2, operation):
     
     if(operation == "+"):
-        return sum(first_number, second_number)
+        return sum(num1, num2)
     elif(operation == "-"):
-        return subctract(first_number, second_number)
+        return subctract(num1, num2)
     elif(operation == "*"):
-        return multiply(first_number, second_number)
+        return multiply(num1, num2)
     elif(operation == "/"):
-        return divide(first_number, second_number)
-    
-print("Il risultato è ", calculation())
+        return divide(num1, num2)
+    elif(operation == "**"):
+        return square(num1, num2)
+    elif(operation == "%"):
+        return module(num1, num2)
+
+operation_name = ""
+for key, value in operations.items():
+    if value == operation:
+        operation_name= key
+        break
+
+print("Il risultato è ", calculator(first_number, second_number, operation))
+print("L'operazione eseguita era ", operation_name)
+
