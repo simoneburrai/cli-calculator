@@ -1,4 +1,4 @@
-# 💻 Progetto 1: Calcolatrice a Riga di Comando (CLI Calculator)
+# 💻 Calcolatrice a Riga di Comando (CLI Calculator)
 
 ## 🎯 Obiettivo del Progetto
 
